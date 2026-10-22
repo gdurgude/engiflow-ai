@@ -1,0 +1,1 @@
+Windows: extract zip; open engiflow-ai folder; see README.md. Run PowerShell from engiflow-ai\backend. Server URL http://127.0.0.1:8002/

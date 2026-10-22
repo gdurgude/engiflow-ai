@@ -1,0 +1,24 @@
+# Secrets and runtime data
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+data/
+backend/data/
+**/uploads/
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+# Python/editor
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+.vscode/
+.idea/
+.DS_Store

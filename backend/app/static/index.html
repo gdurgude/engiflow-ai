@@ -1,0 +1,190 @@
+<!doctype html><html lang="en">
+<head><meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/><title>EngiFlow AI — Engineering workspace</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/static/styles.css">
+</head><body>
+<div id="intro" class="intro" aria-label="EngiFlow AI loading"><div class="intro-logo">✳</div>
+<div class="intro-title">EngiFlow <span>AI</span></div>
+<div class="intro-subtitle">Engineering intelligence, in motion.</div><div class="intro-line">
+</div></div>
+<div id="authScreen" class="auth-screen" hidden><div class="auth-card">
+<div class="auth-brand">✳ &nbsp; EngiFlow <span>AI</span></div>
+<div class="auth-kicker">YOUR ENGINEERING WORKSPACE</div><h1 id="authHeading">Welcome back</h1>
+<p id="authDescription">Sign in to access your private projects and documents.</p><form id="authForm">
+<div id="nameField" hidden><label for="authName">Your name</label>
+<input class="field" id="authName" autocomplete="name" placeholder="Full name"></div>
+<label for="authEmail">Work email</label><input class="field" id="authEmail" type="email" autocomplete="email" required placeholder="you@company.com">
+<label for="authPassword">Password</label><input class="field" id="authPassword" type="password" autocomplete="current-password" required minlength="8" placeholder="At least 8 characters">
+<p id="authError" class="auth-error" role="alert"></p>
+<button id="authSubmit" type="submit" class="primary auth-submit">Sign in →</button></form>
+<p class="auth-switch"><span id="authSwitchText">New to EngiFlow?</span> <button id="authToggle" type="button">Create an account</button>
+</p><p class="auth-switch">
+<button id="openVerification" type="button">I need to verify my email</button></p>
+</div></div>
+<div id="verifyScreen" class="auth-screen" hidden><div class="auth-card">
+<div class="auth-brand">✳ &nbsp; EngiFlow <span>AI</span></div>
+<div class="auth-kicker">SECURE ACCOUNT SETUP</div><h1>Verify your email</h1>
+<p>Enter the six-digit code sent to <strong id="verifyAddress"></strong>.</p>
+<form id="verifyForm"><label for="verifyCode">Verification code</label>
+<input class="field" id="verifyCode" type="text" pattern="[0-9]{6}" maxlength="6" inputmode="numeric" autocomplete="one-time-code" required placeholder="000000"><p id="verifyError" class="auth-error" role="alert">
+</p><button class="primary auth-submit" type="submit">Verify and continue →</button>
+</form><p class="auth-switch">
+<button id="resendCode" type="button">Resend code</button> · <button id="backToLogin" type="button">Back to sign in</button></p>
+</div></div>
+<div class="shell" id="workspaceShell" hidden><aside class="sidebar">
+<a class="brand" href="/"><span class="brandicon">E<span>✦</span>
+</span><span>engi<span class="brand-accent">flow</span>
+<small>AI WORKSPACE</small></span>
+</a><div class="workspace-label">WORKSPACE <span class="dot">
+</span></div>
+<div class="sidegroup"><button class="navlink active" data-view="overview">
+<span class="navicon">◫</span> Overview</button><button class="navlink" data-view="documents">
+<span class="navicon">▤</span> Documents</button><button class="navlink" data-view="assistant">
+<span class="navicon">✧</span> AI Assistant</button><button class="navlink" data-view="requirements">
+<span class="navicon">☷</span> Requirements</button><button class="navlink" data-view="review">
+<span class="navicon">◉</span> Engineering Review</button></div>
+<div class="sidebar-bottom"><div class="tip">
+<span>✦ &nbsp; BUILT FOR ENGINEERS</span><p>From dense technical docs to actionable project insights.</p>
+</div><div class="profile-area">
+<button class="profile-initials" id="profileButton" type="button" aria-label="Open account menu" aria-expanded="false" aria-controls="profileMenu"><span id="profileAvatar">EF</span>
+</button><span id="profileName" hidden>
+</span><span id="profileEmail" hidden>
+</span><div id="profileMenu" class="profile-menu" hidden>
+<div class="account-header"><span class="account-label">SIGNED IN AS</span>
+<span class="account-email" id="menuEmail"></span>
+</div><button id="logoutButton" class="account-logout" type="button">↪ &nbsp; Sign out</button>
+</div></div>
+</div></aside>
+<div class="main"><header class="topbar">
+<div><span class="breadcrumb">Workspace</span>
+<span class="slash">/</span><span id="currentPage">Overview</span>
+</div><div class="topright">
+<span class="status"><i>
+</i> Local workspace</span><span class="separator">
+</span><button class="initials" id="topProfile" title="Account menu" type="button">EF</button>
+</div></header>
+<main id="app"><section id="overview" class="view active">
+<div class="eyebrow"><span class="spark">✦</span> YOUR ENGINEERING COMMAND CENTER</div>
+<div class="headerline"><div>
+<h1>Good to have you here <span class="wave">✳</span></h1>
+<p class="subtitle">Everything you need to keep your engineering projects moving.</p></div>
+<button class="primary" id="newProject">＋ &nbsp; New project</button></div>
+<div class="hero"><div class="hero-copy">
+<div class="hero-pill">✦ &nbsp; MEET YOUR AI COPILOT</div><h2>Engineering clarity,<br>
+<em>powered by AI.</em></h2>
+<p>Turn complex documentation into answers, insights, and confident next steps — in seconds.</p><button class="hero-button" data-goto="assistant">Explore AI Assistant <span>↗</span>
+</button></div>
+<div class="hero-art" aria-hidden="true"><div class="orbit o1">
+</div><div class="orbit o2">
+</div><div class="orbit o3">
+</div><div class="core">✳</div>
+<div class="tiny-star star1">✧</div><div class="tiny-star star2">✦</div>
+</div></div>
+<div class="metrics"><div class="metric">
+<div class="metric-top"><span>Active projects</span>
+<span class="metric-ico lavender">◈</span></div>
+<strong id="projectCount">0</strong><small>Your engineering workspaces</small>
+</div><div class="metric">
+<div class="metric-top"><span>Documents</span>
+<span class="metric-ico blue">▤</span></div>
+<strong id="docCount">0</strong><small>Uploaded & ready to analyze</small>
+</div><div class="metric">
+<div class="metric-top"><span>Requirements</span>
+<span class="metric-ico amber">☷</span></div>
+<strong id="reqCount">0</strong><small>Extracted candidate values</small>
+</div></div>
+<div class="sectionline"><div>
+<h3>Your projects</h3><p>Pick up where you left off</p>
+</div><button class="textbutton" data-goto="documents">View documents →</button>
+</div><div id="projects" class="project-grid">
+</div></section>
+<section id="documents" class="view"><div class="eyebrow">DOCUMENT INTELLIGENCE</div>
+<div class="headerline"><div>
+<h1>Documents</h1><p class="subtitle">Keep project specs, drawings and technical references in one place.</p>
+</div></div>
+<div class="panel"><div class="panel-head">
+<h3>Upload a PDF</h3><span class="subtle">Up to 15 MB · 150 pages · text-based PDFs</span>
+</div><label class="field-label" for="docProject">Choose a project</label>
+<select id="docProject" class="field"></select>
+<label class="dropzone" for="fileInput"><span class="upload-circle">↑</span>
+<b>Choose a PDF to upload</b><span>Click to select a technical document from your computer</span>
+<input id="fileInput" type="file" accept="application/pdf" hidden></label>
+<div class="upload-row"><span id="fileName" class="muted">No file selected</span>
+<button class="primary" id="uploadBtn">Upload document →</button></div>
+<div id="uploadMessage" class="message" role="status"></div>
+</div><div class="sectionline">
+<div><h3>Project documents</h3>
+<p>Files available for AI analysis</p></div>
+</div><div id="documentList" class="list-panel">
+</div></section>
+<section id="assistant" class="view"><div class="eyebrow">INTELLIGENCE, ON DEMAND</div>
+<div class="headerline"><div>
+<h1>AI Assistant <span class="wave">✳</span></h1>
+<p class="subtitle">Get grounded answers from your engineering documentation.</p></div>
+</div><div class="assistant-layout">
+<div class="panel chat-panel"><div class="chat-head">
+<span class="assistant-avatar">✳</span><div>
+<b>EngiFlow Copilot</b><small>Answers grounded in your project documents</small>
+</div><span class="live-tag">● &nbsp; Ready</span>
+</div><div id="chatMessages" class="messages">
+<div class="ai-message"><div class="assistant-avatar mini">✳</div>
+<div class="bubble"><b>Hello! I'm your engineering assistant.</b>
+<p>Select a project, upload a PDF, and ask me about equipment specs, power requirements, or anything documented in your files.</p></div>
+</div></div>
+<form id="askForm" class="chat-input-wrap"><input id="question" placeholder="Ask a question about your project documents…" required minlength="3">
+<button class="send" aria-label="Send question">➤</button></form>
+</div><div class="assistant-side">
+<div class="panel"><h3>Context</h3>
+<p class="muted">Choose which project the assistant should read.</p><label class="field-label" for="askProject">Project</label>
+<select id="askProject" class="field"></select>
+</div><div class="panel">
+<h3>Try asking</h3><button class="prompt" data-prompt="What voltage ratings are specified?">↗ &nbsp; What voltage ratings are specified?</button>
+<button class="prompt" data-prompt="Summarize the technical requirements.">↗ &nbsp; Summarize the technical requirements.</button><button class="prompt" data-prompt="What equipment capacities are mentioned?">↗ &nbsp; What equipment capacities are mentioned?</button>
+</div><div class="info-note">ⓘ &nbsp; AI output is informational, not an engineering approval or compliance determination.</div>
+</div></div>
+</section><section id="requirements" class="view">
+<div class="eyebrow">PROJECT INSIGHTS</div><div class="headerline">
+<div><h1>Requirements</h1>
+<p class="subtitle">Spot electrical values and technical constraints found in your documents.</p></div>
+</div><div class="panel">
+<div class="panel-head"><h3>Extracted specifications</h3>
+<select id="reqProject" class="field small-field"></select>
+</div><p class="muted">Detected values are candidates only. Always verify against source documents.</p>
+<div id="requirementsList" class="list-panel embedded"></div>
+</div></section>
+<section id="review" class="view"><div class="eyebrow">ENGINEERING INTELLIGENCE</div>
+<div class="headerline"><div>
+<h1>Engineering Review <span class="wave">✳</span></h1>
+<p class="subtitle">Screen project documents for technical specifications and documentation gaps.</p></div>
+</div><div class="panel">
+<div class="panel-head"><h3>Document screening</h3>
+<select id="reviewProject" class="field small-field" aria-label="Choose project for engineering review"></select>
+</div><p class="muted">Checks look for documented evidence, not design compliance. A missing mention may simply mean the topic is not applicable or not in these PDFs.</p>
+<div class="review-actions"><button id="runReview" class="primary" type="button">✦ &nbsp; Run engineering review</button>
+<button id="downloadReview" class="secondary" type="button" disabled>↓ &nbsp; Export report</button></div>
+<div id="reviewNotice" role="status" class="message"></div>
+<div id="reviewSummary" class="review-summary"></div>
+<div id="reviewResults" class="review-results"></div>
+<div class="sectionline conflict-heading"><div>
+<h3>Cross-document conflict scan</h3><p>Compare named specifications from two or more PDFs in this project.</p>
+</div></div>
+<div class="review-actions"><button id="runConflicts" class="primary" type="button">⇄ &nbsp; Compare specifications</button>
+<button id="exportPdfReport" class="secondary" type="button">↓ &nbsp; Download PDF report</button><button id="exportConflicts" class="secondary" type="button" disabled>↓ &nbsp; Export conflicts</button>
+</div><p id="conflictNotice" class="muted" role="status">Upload at least two engineering PDFs with comparable named specifications.</p>
+<div id="conflictResults" class="review-results"></div>
+</div></section>
+</main></div>
+</div><div id="modal" class="overlay" hidden>
+<form id="projectForm" class="modal"><div class="modal-header">
+<div><div class="eyebrow">NEW WORKSPACE</div>
+<h2>Create project</h2></div>
+<button type="button" id="closeModal" class="close">✕</button></div>
+<p class="muted">Give your engineering project a name to organize its documents and insights.</p><label class="field-label" for="projectName">Project name</label>
+<input id="projectName" class="field" maxlength="120" minlength="1" placeholder="e.g. North Campus Power Upgrade" required><div id="projectError" class="message">
+</div><div class="modal-actions">
+<button type="button" class="secondary" id="cancelModal">Cancel</button><button class="primary" type="submit">Create project →</button>
+</div></form>
+</div><script src="/static/app.js">
+</script></body>
+</html>
