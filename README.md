@@ -111,7 +111,4 @@ EngiFlow AI is designed to support engineering workflows. Technical findings sho
 ## Author
 
 **Gaurav Durgude**
-
-M.S. Computer Science: Binghamton University
-
 GitHub: [gdurgude](https://github.com/gdurgude)
